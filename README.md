@@ -27,9 +27,10 @@ In the search and testing the API stage was taking me some time.
 In the data, I tried to use in search's search player by name, in lookups's player details by id,
 player former teams by player's id and milestones by player's id.
 In getting the response, I get confused that the response.data in line 27 and line 79 the 
-player and players different. It toke me few hours to play aroung with it.
+player and players different. It toke me few hours to play around with it.
 
 What I learned from this project?
+
 I learned to read the development document!
 Gareth also show me how to use the data that we stored in localstorage. By using JSON.stringify and JSON.parse to retrieve data from the localstorage. 
 
