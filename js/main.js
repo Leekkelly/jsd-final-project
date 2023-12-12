@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", function(){
 
       // const url = `https://thesportsdb.com/api/v1/json/3/searchplayers.php?p=Danny_Welbeck`;
       const url = `https://thesportsdb.com/api/v1/json/3/searchplayers.php?p=${searchText.value}`;
-      //try Lionel Messi, Harry Kane, Kylian Mbappe, 
+      //try Lionel Messi, Harry Kane, Kylian Mbappe, Luka Modric, Toni Kroos 
       
       // axios.get(`http://www.numbersapi.com/${userNumber.value}?json`).then( function(response){
       axios.get(url).then( function(response){
@@ -47,8 +47,8 @@ document.addEventListener("DOMContentLoaded", function(){
                 
                 <img src="${playerImgUrl}" alt="Image" /> 
                 <p>
-                    <p>player date born: ${player.dateBorn} </p>
-                    <p>player birth location: ${ player.strBirthLocation} </p>
+                    <p>Player Born Date : ${player.dateBorn} </p>
+                    <p>Player Birth Location : ${ player.strBirthLocation} </p>
                 </p>
               </div>
               `;
@@ -111,14 +111,14 @@ document.addEventListener("DOMContentLoaded", function(){
     // console.log(`showPlayer details img`,player[0].strCutout);
 
     outputDetailsDiv.innerHTML = `
-        <div>
-          <img src="${playerImgUrl}" alt="Image" />
-          <h3>${player[0].strPlayer}</h3>
-          <p>Player's Nationality: ${player[0].strNationality}</p>
-          <p>About this player : ${player[0].strDescriptionEN}</p>
-          <p>Player's Height: ${player[0].strHeight}</p>
-          <p>Player's Weight: ${player[0].strWeight}</p> 
-        </div>
+      <div>          
+        <img src="${playerImgUrl}" alt="Image" />      
+        <h3>${player[0].strPlayer}</h3>      
+        <p>Player's Height: ${player[0].strHeight}</p>
+        <p>Player's Weight: ${player[0].strWeight}</p> 
+        <p>Player's Nationality: ${player[0].strNationality}</p>
+        <p>About this player : ${player[0].strDescriptionEN}</p>           
+      </div>
     `;
   }
 
@@ -138,15 +138,23 @@ document.addEventListener("DOMContentLoaded", function(){
     // localStorage.setItem(`Player`,`${JSON.stringify(player)}`);
     // const milestone = JSON.parse(localStorage.Player);
     // console.log(milestone);
+    // milestonesDiv.innerHTML = `
+    //   <h3>Milestones:</h3>
+    //   <ul>
+    //       ${milestone.map(player => 
+    //         `<li>${player.strMilestone}</li>`).join('')}
+    //   </ul>
+      
+    // `;
 
     //use .map()here to get all the achieve player done, .join to help show all milestone together 
     milestonesDiv.innerHTML = `
-      <h3>Milestones:</h3>
-      <ul>
-          ${player.map(player => 
-            `<li>${player.strMilestone}</li>`).join('')}
-      </ul>
-      <button id="bookmark">Bookmarked it!</button>
+        <h3>Milestones:</h3>
+        <ul>
+            ${player.map(player => 
+              `<li>${player.strMilestone}</li>`).join('')}
+        </ul>
+      
     `;
   }
 
